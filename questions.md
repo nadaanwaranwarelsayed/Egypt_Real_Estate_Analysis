@@ -8,6 +8,9 @@ This project analyzes ~20,000 property listings from PropertyFinder Egypt
 3. Is there a price difference between Cash and Installments listings?
 4. What is the typical down payment percentage of the price in each area?
 5. Which listings are priced unusually high or low compared to their area (outliers)?
+6. Which areas are the most and least expensive per sqm (with at least 30 listings)?
+7. Does price per sqm decrease as unit size increases?
+8. Do installment listings have lower down payments than cash listings?
 
 ## Scope notes
 - Area sizes are converted from sqft to sqm (sqft / 10.764).
