@@ -13,5 +13,11 @@ This project analyzes ~20,000 property listings from PropertyFinder Egypt
 8. Do installment listings have lower down payments than cash listings?
 
 ## Scope notes
-- Area sizes are converted from sqft to sqm (sqft / 10.764).
+- Size is parsed from the listing's "sqm" value (already provided in the data).
+- "Area" refers to the city/district level (e.g., New Cairo, 6th of October). Compound-level analysis is used only where there are enough listings.
+- Area-level comparisons include only areas with at least 30 listings.
 - Chalets are analyzed separately from residential units, since they are mostly coastal/vacation properties.
+- Listings with clearly invalid price or size values are flagged and handled before analysis (see the cleaning section in the notebook).
+- Down payment analysis is limited to listings that report it (~27% of the data).
+- Question 8 compares only listings that report a down payment, in both payment groups.
+- Prices are asking prices from PropertyFinder listings (Aug-Sep 2025), not actual sale prices.
