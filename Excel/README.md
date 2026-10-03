@@ -58,5 +58,4 @@ The raw CSV is not included in this repo; download it from Kaggle.
 - `available_from` mixes dates from Aug-Sep 2025 (about 87% of the dated rows) with a few later dates, so it is not used in the analysis.
 
 ## Next step
-Data cleaning and EDA in Python: [notebooks/egypt_real_estate_analysis.ipynb](../notebooks/egypt_real_estate_analysis.ipynb).
-
+Data cleaning and EDA in Python: [Python notebook](Egypt_Real_Estate_Analysis/notebooks/Egypt_Real_Estate_Analysis.ipynb at main · nadaanwaranwarelsayed/Egypt_Real_Estate_Analysis)
