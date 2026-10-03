@@ -1,7 +1,7 @@
 # Business Questions
 
 This project analyzes ~20,000 property listings from PropertyFinder Egypt
-(asking prices, not actual sale prices) to answer the following questions:
+(19,752 after cleaning; asking prices, not actual sale prices) to answer the following questions:
 
 1. What is the average price per sqm in each area/city?
 2. How do apartment prices compare to villa prices within the same area?
@@ -14,10 +14,11 @@ This project analyzes ~20,000 property listings from PropertyFinder Egypt
 
 ## Scope notes
 - Size is parsed from the listing's "sqm" value (already provided in the data).
-- "Area" refers to the city/district level (e.g., New Cairo, 6th of October). Compound-level analysis is used only where there are enough listings.
-- Area-level comparisons include only areas with at least 30 listings.
-- Chalets are analyzed separately from residential units, since they are mostly coastal/vacation properties.
-- Listings with clearly invalid price or size values are flagged and handled before analysis (see the cleaning section in the notebook).
-- Down payment analysis is limited to listings that report it (~27% of the data).
-- Question 8 compares only listings that report a down payment, in both payment groups.
-- Prices are asking prices from PropertyFinder listings (Aug-Sep 2025), not actual sale prices.
+- "Area" refers to the city level (e.g., New Cairo City, 6 October City). Area-level comparisons include only areas with at least 30 listings.
+- Residential units = Apartment, Villa, Townhouse, Twin House, Duplex, Penthouse, iVilla. Chalets are analyzed separately (city level only). Hotel Apartments and rare types ("Other": Land, Cabin, Palace, etc.) are excluded from price analysis.
+- Invalid listings are flagged (`is_outlier`), kept in the data, and excluded from price analysis: impossible sizes (under 20 or over 5,000 sqm), extreme price per sqm within a property type (3 x IQR on a log scale), or above 1M EGP per sqm.
+- Question 5 compares each listing with others of the same type in the same city (1.5 x IQR on a log scale, at least 30 listings per city and type).
+- Question 7 is analyzed overall and within each property type, because larger units are mostly villas.
+- Down payment is reported in only ~26% of listings; Questions 4 and 8 use only those listings. Values under 1,000 EGP were percentages typed as EGP and are treated as missing.
+- The Cash/Installments label is not fully reliable: many "Cash" listings report a down payment or mention payment plans. Questions 3 and 8 compare labels, not confirmed payment terms.
+- Prices are asking prices from PropertyFinder listings, mostly dated Aug-Sep 2025, not actual sale prices.
