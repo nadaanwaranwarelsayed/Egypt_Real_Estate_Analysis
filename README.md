@@ -6,7 +6,7 @@ End-to-end analysis of ~20,000 property listings from PropertyFinder Egypt: data
 **Tools:** Excel, Python (pandas, matplotlib, seaborn), Power BI.
 
 ## Dashboard
-![Dashboard](powerbi/dashboard.png)
+<img width="1542" height="869" alt="Dashboard" src="https://github.com/user-attachments/assets/b8bd499f-b88a-4f2d-b2f3-5d84fda53bba" />
 
 ## Key findings
 Based on 15,096 residential listings after cleaning (median values; asking prices, not sale prices).
